@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { ListGroup } from 'react-bootstrap';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const LeftNav = () => {
 	const [categories, setCategories] = useState([]);
 
 	useEffect(() => {
-		fetch('http://localhost:5000/categories')
+		fetch('https://dragon-news-server-safayetalam.vercel.app/categories')
 			.then((res) => res.json())
 			.then((data) => setCategories(data))
 			.catch((error) => console.error(error));

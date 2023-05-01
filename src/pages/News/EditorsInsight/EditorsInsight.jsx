@@ -6,7 +6,7 @@ const EditorsInsight = () => {
 	const [editorsInsight, setEditorsInsight] = useState([]);
 
 	useEffect(() => {
-		fetch(`http://localhost:5000/categories/0`)
+		fetch(`https://dragon-news-server-safayetalam.vercel.app/categories/0`)
 			.then((res) => res.json())
 			.then((data) => setEditorsInsight(data.slice(0, 3)))
 			.catch((error) => console.log(error));

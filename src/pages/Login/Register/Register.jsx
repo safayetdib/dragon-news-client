@@ -20,12 +20,9 @@ const Register = () => {
 		const email = form.email.value;
 		const password = form.password.value;
 
-		console.log(name, photo, email, password);
-
 		createUser(email, password)
 			.then((res) => {
 				const createdUser = res.user;
-				console.log(createdUser);
 			})
 			.catch((err) => console.log(err));
 	};
