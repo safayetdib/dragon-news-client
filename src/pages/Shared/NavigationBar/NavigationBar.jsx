@@ -4,7 +4,13 @@ import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 
 const NavigationBar = () => {
-	const { user } = useContext(AuthContext);
+	const { user, logout } = useContext(AuthContext);
+
+	const handleLogout = () => {
+		logout()
+			.then()
+			.catch((err) => console.log(err));
+	};
 
 	return (
 		<Container>
@@ -55,6 +61,7 @@ const NavigationBar = () => {
 										<p className="m-0 fw-semibold">{user.displayName}</p>
 									</Nav.Link>
 									<Button
+										onClick={handleLogout}
 										variant="secondary"
 										size="sm"
 										className="rounded-0 my-auto ms-3 px-3">
