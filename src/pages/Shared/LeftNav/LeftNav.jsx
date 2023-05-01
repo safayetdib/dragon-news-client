@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ListGroup } from 'react-bootstrap';
+import { Link, NavLink } from 'react-router-dom';
 
 const LeftNav = () => {
 	const [categories, setCategories] = useState([]);
@@ -17,9 +18,12 @@ const LeftNav = () => {
 
 			<ListGroup className="mt-2">
 				{categories.map((category) => (
-					<ListGroup.Item action key={category.id}>
+					<NavLink
+						to={`/category/${category.id}`}
+						key={category.id}
+						className={`text-decoration-none text-secondary border py-2 px-3 rounded mt-2 hover-effect`}>
 						{category.name}
-					</ListGroup.Item>
+					</NavLink>
 				))}
 			</ListGroup>
 		</div>
